@@ -1,18 +1,18 @@
-import './globals.css'
+import "./globals.css";
 
 export const metadata = {
-  title: 'Pocketsub',
-  description: 'Manage your payments with ease',
-}
+  title: "Pocketsub",
+  description: "Manage your payments with ease",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body>{children}</body>
     </html>
-  )
+  );
 }
