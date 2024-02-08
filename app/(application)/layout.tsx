@@ -4,7 +4,7 @@ export default function ApplicationLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div>
+    <div className="container">
       <aside>Aside nav</aside>
       <main>{children}</main>
     </div>
