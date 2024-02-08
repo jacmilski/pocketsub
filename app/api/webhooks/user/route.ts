@@ -1,9 +1,8 @@
-import { prisma } from "../../../../lib";
 import { IncomingHttpHeaders } from "http";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import { Webhook, WebhookRequiredHeaders } from "svix";
-
+import { prisma } from "../../../../lib";
 
 const webhookSecret = process.env.WEBHOOK_SECRET || "";
 
@@ -30,7 +29,7 @@ async function handler(request: Request) {
 
   const eventType = evt.type;
   if (eventType === "user.created" || eventType === "user.updated") {
-    const { id, email_addresses, username, owner } = evt.data;
+    const { id, email_addresses, username } = evt.data;
 
     return await prisma.user.upsert({
       where: { id },
@@ -38,7 +37,6 @@ async function handler(request: Request) {
         id,
         email: email_addresses[0].email_address,
         name: username,
-        owner,
       },
       update: {
         email: email_addresses[0].email_address,
@@ -52,7 +50,6 @@ type Event = {
     id: string;
     email_addresses: { id: string; email_address: string }[];
     username: string;
-    owner: string;
   };
   object: string;
   type: string;
