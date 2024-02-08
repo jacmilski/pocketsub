@@ -34,7 +34,7 @@ async function handler(request: Request) {
     return await prisma.user.upsert({
       where: { id },
       create: {
-        id,
+        // id,
         email: email_addresses[0].email_address,
         name: username,
       },
@@ -55,6 +55,8 @@ type Event = {
   type: string;
 };
 
-export const GET = handler;
-export const POST = handler;
-export const PUT = handler;
+const GET = handler;
+const POST = handler;
+const PUT = handler;
+
+export { GET, POST, PUT };
