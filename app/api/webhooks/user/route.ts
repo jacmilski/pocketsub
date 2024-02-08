@@ -54,8 +54,9 @@ type Event = {
   object: string;
   type: string;
 };
-
+// "Promise<NextResponse<{}> | { id: string; name: string; email: string; owner: string; } | undefined>" is not a valid GET return type:
 const GET = handler;
+// Expected "void | Response | Promise<void | Response>"
 const POST = handler;
 const PUT = handler;
 
