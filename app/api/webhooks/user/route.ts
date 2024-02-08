@@ -2,7 +2,7 @@ import { IncomingHttpHeaders } from "http";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import { Webhook, WebhookRequiredHeaders } from "svix";
-import { prisma } from "../../../../lib";
+import { prisma } from "../../../../lib/index";
 
 const webhookSecret = process.env.WEBHOOK_SECRET || "";
 
