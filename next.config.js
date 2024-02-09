@@ -1,4 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+    output: 'export',
+    pageExtensions: ['ts', 'tsx', 'js'],
+}
 
-module.exports = nextConfig
+module.exports = {
+    skipMiddlewareUrlNormalize: true,
+    nextConfig,
+}
