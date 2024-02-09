@@ -5,8 +5,8 @@ export default function RootLayout({
 }) {
   return (
     <div>
-        <header>Marketing header</header>
-        {children}
+      <header>Marketing header</header>
+      {children}
     </div>
-  )
+  );
 }

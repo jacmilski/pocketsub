@@ -1,10 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-    output: 'export',
-    pageExtensions: ['ts', 'tsx', 'js'],
-}
+const nextConfig = {}
 
-module.exports = {
-    skipMiddlewareUrlNormalize: true,
-    nextConfig,
-}
+module.exports = nextConfig;
